@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gi9ss3zb@y2+r&t(d9jn4a=r#756ige_^0)20hlyhe#3c)hi+s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '127.0. 0.1:8000', '*']
 
 
 # Application definition
@@ -83,6 +83,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# # postgres
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env('NAME'), 
+#         'USER': 'postgres', 
+#         'PASSWORD': env('PASSWORD'),
+#         'HOST':  env('HOST'), 
+#         'PORT': '5432',
+#     }
+# }
 
 JAZZMIN_SETTINGS = {
     "site_title": "MedOps",
