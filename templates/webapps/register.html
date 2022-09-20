@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <style>
+        .errorlist li{
+            color: red;
+        }
+    </style>
+{% endblock style %}
+{% block title %}
+    {{Title}}
+{% endblock title %}
+{% block container %}
+    <!-- Appointment Start -->
+    <div class="container-fluid" style="margin-top: 0px;min-height: 562px;">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-6 py-5">
+                    <div class="py-5">
+                        <h1 class="mb-4 text-center">REGISTER</h1>
+                        <p class=" mb-0">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class=" mb-4 text-center">Register Form</h1>
+                    <form method="post" action="" class="row g-1" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <!-- firstname -->
+                        <div class="col-md-6">
+                            <label for="{{ form.first_name.id_for_label }}" class="form-label">Firstname</label>
+                            {{form.first_name}} <br>{{form.first_name.errors}}
+                        </div>
+                        <!-- lastname -->
+                        <div class="col-md-6">
+                            <label for="{{ form.last_name.id_for_label }}" class="form-label">Lastname</label>
+                            {{form.last_name}} <br>{{form.last_name.errors}}
+                        </div>
+                        <!-- username -->
+                        <div class="col-md-12">
+                            <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                            {{form.username}} <br>{{form.username.errors}}
+                        </div>
+                        <!-- email -->
+                        <div class="col-md-6">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                            {{form.email}} <br>{{form.email.errors}}
+                        </div>
+                        <!-- phone -->
+                        <div class="col-md-6">
+                            <label for="{{ form.phone.id_for_label }}" class="form-label">Phone No</label>
+                            {{form.phone}} <br>{{form.phone.errors}}
+                        </div>
+                        <!-- dob -->
+                        <div class="col-md-6">
+                            <label for="{{ form.dob.id_for_label }}" class="form-label">Phone No</label>
+                            {{form.dob}} <br>{{form.dob.errors}}
+                        </div>
+                        <!-- gender -->
+                        <div class="col-md-6">
+                            <label for="{{ form.gender.id_for_label }}" class="form-label">Gender</label>
+                            {{form.gender}} <br>{{form.gender.errors}}
+                        </div>
+                        <!-- password1 -->
+                        <div class="col-md-6">
+                            <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+                            {{form.password1}} <br>{{form.password1.errors}}
+                        </div>
+                        <!-- password2 -->
+                        <div class="col-md-6">
+                            <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+                            {{form.password2}} <br>{{form.password2.errors}}
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-info">Register</button>
+                            <a href="" class="text-decoration-none text-dark">Already a User? Login</a>
+                        </div>
+                    </form>
+                    <!-- <a href="" class="btn btn-primary mt-3">Forgot Password</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End --> 
+{% endblock container %}

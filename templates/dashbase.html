@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <title>{% block title %}
+      
+    {% endblock title %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'plugins/images/favicon.png' %}">
+    <!-- Custom CSS -->
+    <link href="{% static 'plugins/bower_components/chartist/dist/chartist.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css' %}">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        {% include "headings/dashnavs.html" %}
+        <!-- messages rendering -->     
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{message.tags}} alert-dismissible fade-show top-0 end-0 position-absolute w-30" role="alert">
+                    <strong>{{message}}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %} 
+        {% endif %}   
+        <div class="page-wrapper">
+            
+            {% block content %}
+              
+            {% endblock content %}
+
+            <footer class="footer text-center"> 2021 ©Smart Healthcare brought to you by <a
+                    href="">MedOps</a>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="{% static 'plugins/bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/app-style-switcher.js' %}"></script>
+    <script src="{% static 'plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js' %}"></script>
+    <script src="{% static 'js/waves.js' %}"></script>
+    <script src="{% static 'js/sidebarmenu.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'plugins/bower_components/chartist/dist/chartist.min.js' %}"></script>
+    <script src="{% static 'plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js' %}"></script>
+    <script src="{% static 'js/pages/dashboards/dashboard1.js' %}"></script>
+</body>
+
+</html>

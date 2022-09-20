@@ -1,0 +1,33 @@
+{% extends "dashbase.html" %}
+{% load static %}
+{% block title %}
+    {{Title}}
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6  my-2">
+                <h4 class="text-center">DISEASE DETAILS</h4>
+                <img src="{% static 'img/dash.jpg' %}" alt="" class="img-fluid">
+                <h5 class="my-2 text-center mt-2">DISCLAIMER</h5>
+                <p class="lead">All Informations on this app is for demo purpose only. Do not use it for medications or treatments.</p>
+            </div>
+            <div class="col-md-6 my-2">
+                {% if result %}
+                    <h5 class="my-2 text-center">DISEASE DETAILS</h5>
+                    <p class="lead">{{result}}</p>
+                    <h5 class="text-center mt-1">PATH TO RECOVERY</h5>
+                    <p class="lead text-center">
+                        Because you visited this page, we have sent you a mail with steps to your recovery and also the details of a specialist doctor for your illness.
+                    </p>
+                {% else %}
+                    <h5 class="my-2 text-center">DISEASE DETAILS</h5>
+                    <p class="lead text-center">We Cuurently do not have any information for you regarding your illness</p> 
+                {% endif %}                               
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+

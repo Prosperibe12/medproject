@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    {{Title}}
+{% endblock title %}
+
+<!-- content -->
+{% block container %}
+    <div class="container-fluid p-0" id="banner">
+        <div id="ban-dark"></div>
+        {% if banner %}
+            {% for item in banner %}
+                <img src="{{item.image.url}}" alt="banner">
+            {% endfor %}
+        {% endif %}
+        <div class="content">
+        <h2 class="display-3">Access <br> Smart HealthCare</h2>
+        <p class="lead">Get personalized healthcare on the Go</p>
+        </div>
+    </div>
+
+    <!-- section 2 -->
+    <section id="special" class="my-5">
+        <div class="container">
+            <div class="intro text-center my-4">
+                <h2>MedOps SPECIALS</h2>
+            </div>
+            <div class="row my-4 g-4">
+                <div class="col-md-4">
+                <div class="card p-3 text-center">
+                    <h3>2000+ Our Worldwide Guide</h3>
+                </div>
+                </div>
+                <div class="col-md-4">
+                <div class="card p-3 text-center">
+                    <h3>100% Trusted Tour Agency</h3>
+                </div>
+                </div>
+                <div class="col-md-4">
+                <div class="card p-3 text-center">
+                    <h3>12+ Years of Travel Experience</h3>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 3 -->
+    <section>
+        <div class="container-fluid mb-2">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'img/image1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">General Surgery</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'img/image2.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">Medical Laboratory</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'img/image3.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">Drug Dispensing</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock container %}

@@ -1,0 +1,38 @@
+{% extends "dashbase.html" %}
+{% load static %}
+{% block title %}
+    {{Title}}
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6  my-2">
+                <h4 class="text-center"> GET ACCESS TO DOCTORS</h4>
+                <img src="{% static 'img/dash.jpg' %}" alt="" class="img-fluid">
+                <p class="lead mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi esse praesentium fuga aliquid suscipit beatae illum aut quibusdam! Quos, eos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, laudantium?</p>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, at quae officia odit voluptatum tenetur repellendus exercitationem, et ex vel in omnis necessitatibus, doloremque incidunt quidem praesentium distinctio repudiandae eveniet.</p>
+            </div>
+            <div class="col-md-6  my-2">
+                <h5 class="my-2 text-center">DISCLAIMER</h5>
+                <p class="lead">This app is only for demo purpose and informations based on diagnosis are not to be used for treatment.</p>
+                <h5 class="text-center">CONTINUE TEST</h5>
+                <p class="lead text-center">These are the most common illness associated with your symptoms.</p>
+                <p class="lead">Click on them to read more</p>
+                {% if result_diagonize %}
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        {% for result in result_diagonize %}
+                            <a href="{% url 'user:diagnosis-details' %}?read={{result}}" class="btn btn-primary" type="button">{{result}}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="lead text-center">We Could not provide you with a result, Please see a doctor</p>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+

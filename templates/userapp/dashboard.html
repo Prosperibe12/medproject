@@ -1,0 +1,49 @@
+{% extends "dashbase.html" %}
+{% load static %}
+{% block title %}
+    {{Title}}
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6  my-2">
+                <h4 class="text-center"> GET ACCESS TO DOCTORS</h4>
+                <img src="{% static 'img/dash.jpg' %}" alt="" class="img-fluid">
+                <p class="lead mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi esse praesentium fuga aliquid suscipit beatae illum aut quibusdam! Quos, eos? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, laudantium?</p>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, at quae officia odit voluptatum tenetur repellendus exercitationem, et ex vel in omnis necessitatibus, doloremque incidunt quidem praesentium distinctio repudiandae eveniet.</p>
+            </div>
+            <div class="col-md-6  my-2">
+                <h5 class="my-2 text-center">DISCLAIMER</h5>
+                <p class="lead">This app is only for demo purpose and informations based on diagnosis are not to be used for  treatment.</p>
+                <h5 class="text-center">START TEST</h5>
+                <p class="lead text-center">Search for Symptoms keyword</p>
+                <form action="{% url 'user:diagnosis' %}" method="get" class="row g-3">
+                    {% csrf_token %}
+                    <div class="col-md-6">
+                        <label for="age_id" class="form-label">Age</label>
+                        <input type="number" name="age" class="form-control" id="age_id" placeholder="23" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="age_id" class="form-label">Sex</label>
+                        <select name="sex" id="" class="form-select">
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label  for="age_id" class="form-label">Symptom 1</label>
+                        <input type="text" name="symptom1" id="" class="form-control" placeholder="Keyword">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Symptoms 2</label>
+                        <input type="text" name="symptoms" id="" class="form-control" placeholder="Keyword">
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-info" type="submit">Analyse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
